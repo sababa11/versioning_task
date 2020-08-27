@@ -46,8 +46,7 @@ In house: P2
 External: None
  
 
-In addition we have 2 services:
-
+## In addition we have 2 services:
 S1:
 
 Should install P2 package as the application
