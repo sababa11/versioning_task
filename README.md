@@ -46,8 +46,12 @@ External: None
 In addition we have 2 services:
 
 S1:
+
 Should install P2 package as the application
+
+
 S2:
+
 Should install P3 package as the application
  
 
