@@ -30,16 +30,19 @@ We have 3 packages –
 P1:
 
 In house packages required (dependency): None
+
 External packages required: requests
 
 P2:
 
 In house: P1
+
 External: boto3
 
 P3: 
 
 In house: P2
+
 External: None
  
 
