@@ -114,15 +114,16 @@ def find_package_data(packages):
     for package in packages:
         package_data[package] = []
         for subdir in find_subdirectories(package):
-            if '.'.join((package, subdir)) in packages:  # skip submodules
-                logging.debug("skipping submodule %s/%s" % (package, subdir))
-                continue
-            if skip_tests and (subdir == 'tests'):  # skip tests
-                logging.debug("skipping tests %s/%s" % (package, subdir))
-                continue
             if subdir in '.git':  # skip submodules
                 logging.debug("skipping submodule %s/%s" % (package, subdir))
                 continue
+            elif '.'.join((package, subdir)) in packages:  # skip submodules
+                logging.debug("skipping submodule %s/%s" % (package, subdir))
+                continue
+            elif skip_tests and (subdir == 'tests'):  # skip tests
+                logging.debug("skipping tests %s/%s" % (package, subdir))
+                continue
+
             package_data[package] += subdir_findall(package_to_path(package),
                                                     subdir)
     return package_data
